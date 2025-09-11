@@ -5,41 +5,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 131 - Dynamic Web Fundamentals - Marco Sandoval</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <meta name="description" content="Welcome to WDD 131 - Dynamic Web Fundamentals. Learn with me, Marco Sandoval, as we utilize HTML, CSS, and JavaScript to build interactive web projects. ">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals page for Marco Sandoval. This page includes information about me, my location, and web development resources. Includes links to LinkedIn, Canvas, Scriptures, and even my Final Project.">
     <meta name="author" content="Marco Sandoval">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
-    <div class="parent">
-        <header>
-            <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
-            <nav>
-                <ul>
-                    <li><a href="https://linkedin.com/in/marcosandoval1999" title="LinkedIn" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://byupw.instructure.com/" title="Canvas" target="_blank">Canvas</a></li>
-                    <li><a href="https://www.churchofjesuschrist.org/study/scriptures/nt/2-cor/12?lang=eng&id=p15#p15" title="Scripture" target="_blank">Scripture</a></li>
-                    <li><a href="#" title="Final Project">Final Project</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <h1>Marco Sandoval</h1>
-            <section class="card about-me">
-                <h2>About Me</h2>
-                <p>Hello! My name is Marco Sandoval, and I am a student at BYU-Pathway. I am passionate about web development and excited to learn more about dynamic web fundamentals in this course. <p>In my free time, I enjoy hiking, reading, and exploring new technologies. I look forward to collaborating with my classmates and building some amazing projects together!</p>
-                <img src="images/profile.webp" alt="Picture of Marco Sandoval">
-            </section>
-            <section class="card webdev-resources">
-                <h2>Web-Dev Resources</h2>
-                <p>This course will cover the basics of HTML, CSS, and JavaScript, focusing on creating dynamic and interactive web applications. We will explore various web development techniques and best practices to enhance user experience.</p>
-                <p>By the end of this course, I hope to have a solid understanding of how to build responsive and engaging web pages that can adapt to different devices and user interactions.</p>
-            </section>
-        </main>
-        <footer>
-            <h2>Footer Content</h2>
-        </footer>
-    </div>
+    <!-- ///////////////1. Header Container//////////////// -->
+    <header>
+        <!--(Header Item 1) - Course Title-->
+        <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
+        <!--(Header Item 2) - NavBar Container-->
+        <nav>
+            <a href="https://www.linkedin.com/in/marcosandoval1999/" target="_blank">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/nt/2-cor/12?lang=eng&id=p15#p15" target="_blank">Scripture</a>
+            <a href="#" target="_blank">Final Project</a>
+        </nav>
+    </header>
+    <!-- ///////////////2. Main Container//////////////// -->
+    <main>
+        <!--(Main Item 1) - Main Heading -->
+        <h1>Marco Sandoval</h1>
+        <!--(Main Item 2) - About Me Card Container -->
+        <section class="card">
+            <!--(Card Item 1) - About Me Header Container -->
+            <h2>About Me</h2>
+            <!--(Card Item 2) - About Me Content Container -->
+            <div class="about-content">
+                <p>
+                    My name is Marco Sandoval. I was born and raised in Arizona, USA. I am currently a student at
+                    Brigham Young University - Idaho, pursuing a degree in Web Design and Development. I have a passion
+                    for coding using languages such as Python, C#, HTML, CSS, and JavaScript. In my free time, I enjoy
+                    hiking, and spending time with my family.
+                </p>
+                <img src="images/profile.webp" alt="Photo of Marco Sandoval" width="150"
+                    height="180">
+            </div>
+            <!--(Card Item 3) - About Me Location Header Container -->
+            <div class="location-header">
+                <h3>Phoenix, Arizona</h3>
+            </div>
+            <!--(Card Item 4) - About Me Location Container -->
+            <div class="location-content">
+                <!-- (Location Item 1) - Location Flag Container -->
+                <div class="flag-box">
+                    <img src="images/flagaz.webp" alt="Official Flag of Arizona" width="100" height="60">
+                    <em>Official Flag of Arizona</em>
+                </div>
+                <!-- (Location Item 2) - Location Text Container -->
+                <div class="location-text">
+                    <p>
+                        Arizona is known for its desert climate and stunning landscapes, including the Grand Canyon.
+                        The state is home to a diverse range of plant and animal species, many of which are unique to the region.
+                        Arizona is also famous for its Native American history and culture, with numerous tribes calling the area home.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!--(Main Item 3) - Web Dev Resources Card Container -->
+        <section class="card">
+            <!--(Card Item 1) - Web Dev Resources Header Container -->
+            <h2>Web Dev Resources</h2>
+            <!--(Card Item 2) - Web Dev Resources Content Container -->
+            <ul>
+                <li><a href="https://dev.to/" target="_blank">Dev.to Community</a></li>
+                <li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
+                <li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3 Schools</a></li>
+                <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+                <li><a href="https://placeholder.com/" target="_blank">Image Placeholder</a></li>
+            </ul>
+        </section>
+    </main>
+    <!-- ///////////////3. Footer Content//////////////// -->
+    <footer>
+        <!-- (Footer Item 1) - Copyright Information -->
+        <p>
+            &copy; <span id="currentyear"></span> | Marco Sandoval | Arizona, USA
+        </p>
+        <!-- (Footer Item 2) - Last Modified Information -->
+        <p id="lastModified"></p>
+    </footer>
 </body>
 
 </html>
