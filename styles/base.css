@@ -1,5 +1,5 @@
 /* Root Variables for Colors */
-:root { 
+:root { /* Root variables for colors */
     --primary: #dfdfdf;
     --secondary: #1a426d;
     --card-border: #bcc1c9;
@@ -7,316 +7,319 @@
     --accent: #ffd600;
 }
 
-/* Global Styles */
-body {
-    margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    background: var(--primary);
-    color: #222;
+
+        /* Global Styles */
+/* /////////////////////////////// */
+body { /* body styles are defaults for the entire website*/
+    margin: 0; /* Start with a clean slate by removing default margin */
+    font-family: 'Roboto', Arial, sans-serif; /* Use a clean, modern font */
+    background: var(--primary); /* The background color of the page */
+    color: #222; /* Default text color */
 }
-h1 {
-    font-weight: 700;
+h1 { /* default style for h1 elements */
+    font-weight: 700; /* Bold font weight for main headings */
 }
-h2, h3{
-    font-weight: 400;
+h2, h3{ /* default style for h2 and h3 elements */
+    font-weight: 400; /* Normal font weight for subheadings */
 }
-p {
-    font-weight: 300;
-}
-header {
-    background: var(--secondary);
-    color: white;
+p { /* default style for paragraph elements */
+    font-weight: 300; /* Light font weight for paragraphs */
 }
 
-#course-title {
-    display: block;
-    text-align: center;
-    font-size: 2rem;
-    padding: 0.7rem 0 0.2rem 0;
-    letter-spacing: 1px;
-}
 
-header nav {
-    display: flex;
-    justify-content: center;
-    background: var(--nav-bg);
-    margin-top: 1.2rem;
-    padding: 0.5rem 0;
-    gap: 13rem;
-    flex-wrap: nowrap;
-}
 
-@media (max-width: 1200px) {
-    header nav {
+/* Elements are display: <something> by default*/
+/* BLOCK - Means the element is block, so it will take the full available width, And entire line.
+            If the line already has content, the block element will start on a new line and take up the full width available. 
+            The Width available is the full width of its parent container, minus any padding or margin.
+            A block level element will always take the width of its parent unless specified, even if we use display flex or grid.*/
+/* INLINE - Means the element is inline, so it will only take up as much width as necessary to fit its content.
+            Inline elements do not start on a new line, they flow along with the surrounding content.
+            The Width available is only the width of its content, plus any padding or margin.*/
+/* FLEX - Makes the element a flex container, allowing for flexible layouts. 
+            It will also change the containers display behavior to that of a block-level, 
+            allowing for more control over its children elements. */
+/* GRID - Makes the element a grid container, allowing for grid layouts. 
+            It will also change the containers display behavior to that of a block-level,
+            allowing for more control over its children elements. */
+
+
+
+/* Header Container Styles */
+/* /////////////////////////////// */
+header { /* Styles for the header container [BLOCK by default]*/
+    background: var(--secondary); /* Background color for the container*/
+    color: white; /* Text color for the container */
+}
+    #course-title { /* Styles for the course-title Span inside the header container [INLINE by default]*/
+        display: block; /* Make it a block element to take full width of the container */
+        text-align: center; /* Center the text horizontally in the container */
+        font-size: 2rem; /* Font size for the course title */
+        padding: 0.7rem 0 0.2rem 0; /* Padding around the text. padding: top right bottom left; */
+        letter-spacing: 1px; /* Space between letters */
+    }
+    header nav { /* Styles for the nav section inside the header container [BLOCK by default]*/
+        display: flex; /* nav items are laid out in a row using flex. Also behaves like a block element so it takes the full width of the parent container */
+        justify-content: center; /* nav items are centered as a group horizontally in the nav container*/
+        margin-top: 1.2rem; /*push the nav container down from the course title by giving it margin on top*/
+        background: var(--nav-bg);/* Background color for the nav container */
+        padding: 0.5rem 0; /* Padding above and below the nav items. padding: <<top bottom> <right left>>; */
+        gap: 13rem; /* Space between each nav item */
+        flex-wrap: nowrap; /* Prevent nav items from wrapping to the next line */
+    }
+        header nav a { /* Styles for the anchor (link) elements inside the nav container [INLINE by default]*/
+            color: white; /* Text color for the links */
+            text-decoration: none; /* Remove the default anchor link underline from links */
+            font-size: 1.1rem; /* Font size for the links */
+            padding: 0.3rem 1rem; /* Padding around the link text. padding: <<top bottom> <right left>>; */
+            border-radius: 4px; /* Rounded corners for the link background. Since no border is specified yet, you can't see the border until the hover effect is active*/
+            transition: background 0.2s, color 0.2s; /* Smooth transition for background and color changes on hover. Must define what properties you want to transition, can only transition properties defined in hover selector.*/
+        }
+            header nav a:hover { /* Hover effect for the anchor (link) elements inside the nav container */
+                background: var(--accent); /* Change background color on hover */
+                color: var(--secondary); /* Change text color on hover */
+                text-decoration: underline; /* Add underline on hover */
+            }
+
+
+
+    /* Main Container Styles */
+/* /////////////////////////////// */
+main { /* Styles for the main container [BLOCK by default]*/
+    max-width: 1200px; /* Maximum width of the main container. This ensures the content doesn't stretch too wide on larger screens */
+    margin: 2rem auto; /* Center the main container horizontally with auto and add vertical margin. margin: <<top bottom> <right left>>; */
+    padding: 0 2.5rem; /* Padding on the left and right sides of the main container. padding: <<top bottom> <right left>>; */
+    display: grid; /* Use CSS Grid for layout inside the main container. Also behaves like a block element so it takes the full width of the parent container */
+    grid-template-columns: 2fr 1fr; /* Define two columns in the grid, with the first column taking up twice the space of the second column */
+    gap: 2rem; /* Space between grid items */
+}
+    main h1 { /* Styles for h1 elements inside the main container [BLOCK by default]*/
+        grid-column: 1 / -1; /* Make the h1 span across all columns in the grid. grid-column 1/-1 means start at first grid-line and end at last grid-line. -1 always refers to the last grid-line */
+        text-align: center; /* Center the text horizontally to parent container. Remember, h1 is block so it has its parents width*/
+        font-size: 2rem; /* Font size for the main heading */
+        color: var(--secondary); /* Text color for the main heading */
+        margin-bottom: 0.7rem; /* Add space below the main heading */
+    }
+    .card { /* Styles for elements with the class "card" inside the main container. Used by <section> elements which are [BLOCK by default]*/
+        background: white; /* Background color for the card */
+        border: 1px solid var(--card-border); /* Border around the card */
+        border-radius: 10px; /* Rounded corners for the card */
+        box-shadow: 0 2px 8px rgba(26, 66, 109, 0.4); /* Subtle shadow for card depth. box-shadow: <offset-x> <offset-y> <blur-radius> <color>; */
+        padding: 1.5rem 1.5rem 1rem 1.5rem; /* Padding inside the card. padding: <<top bottom> <right left>>; */
+        margin-bottom: 1rem; /* Space below each card */
+        display: flex; /* Use Flexbox for layout inside the card. Also behaves like a block element so it takes the full width of the parent container. There are two sections using card in the main container which are laid out with grid. Their width is proportionate to their assigned grid space. Anyway, the items of these cards will be displayed in flex layout */
+        flex-direction: column; /* Arrange card items in a column */
+        justify-content: center; /* Center card items vertically */
+    }
+        .card h2 { /* Styles for h2 elements inside elements with the class "card" [BLOCK by default]*/
+            background: var(--secondary); /* Background color for the card title */
+            color: white; /* Text color for the card title */
+            font-size: 1.3rem; /* Font size for the card title */
+            margin: -1.5rem -1.5rem 1rem -1.5rem; /* Negative margin to offset the padding of the card and make the title span the full width of the card.Negative margining goes the same specified direction but due to the negative it is able to overlap the padding and other neighbouring elements. margin: <<top bottom> <right left>>; */
+            padding: 0.8rem 1.5rem; /* Padding inside the card title. padding: <<top bottom> <right left>>; */
+            border-top-left-radius: 10px; /* Rounded corners for the top-left of the card title */
+            border-top-right-radius: 10px; /* Rounded corners for the top-right of the card title */
+            letter-spacing: 1px; /* Letter spacing for the card title */
+            text-align: center; /* Center the text inside the card title */
+        }
+        .about-content { /* Styles for the about card content div container. This contains a description and an image. This class is used by a <div> element which is [BLOCK by default]*/
+            display: flex; /* Use Flexbox for layout inside the about-content container. Also behaves like a block element so it takes the full width of the parent container */
+            flex-direction: row; /* Arrange about-content items in a row */ 
+            align-items: flex-start; /* Align items to the start of the cross axis (top of the container) */
+            gap: 2rem; /* Space between about-content items */
+        }
+            .about-content p { /* Styles for paragraph elements inside the about-content container */
+                flex: 2; /* Make the paragraph take up twice the space of the image. This means it will be wider than the image */
+                margin: 0 0 0.5rem 0; /* Remove default margin and add space below the paragraph. margin: <<top bottom> <right left>>; */
+                font-size: 1.05rem; /* Font size for the paragraph */
+                line-height: 1.6; /* Line height for the paragraph. This means the space between lines of text */
+            }
+            .about-content img { /* Styles for image elements inside the about-content container */
+                flex: 1; /* Make the image take up space proportionate to the paragraph. This means it will be narrower than the paragraph */
+                align-self: center; /* Center the image vertically within the about-content container */
+                border-radius: 8px; /* Rounded corners for the image */
+                box-shadow: 0 2px 8px rgba(0, 123, 255, 0.5); /* Subtle shadow for image depth. box-shadow: <offset-x> <offset-y> <blur-radius> <color>; */
+                margin-top: 0.5rem; /* Space above the image */
+                margin-bottom: 2rem; /* Space below the image */
+                max-width: 150px; /* Limit the maximum width of the image */
+                height: auto; /* Maintain aspect ratio of the image */
+            }
+        .card h3 { /* Styles for h3 elements inside elements with the class "card" [BLOCK by default]*/
+            font-size: 1.1rem; /* Font size for the subheading */
+            margin-bottom: 0.7rem; /* Space below the subheading */
+            text-align: center; /* Center the text inside the subheading */
+            border-bottom: 1px solid var(--card-border); /* Bottom border for the subheading */
+        }
+        .location-header { /* Styles for the location header div container. This contains a subheading. This class is used by a <div> element which is [BLOCK by default]*/
+            display: flex; /* Use Flexbox for layout inside the location-header container. Also behaves like a block element so it takes the full width of the parent container */
+            flex-direction: column; /* Arrange location-header items in a column */
+            align-items: center; /* Center items horizontally in the container */
+            justify-content: center; /* Center items vertically in the container */
+            gap: 0.5rem; /* Space between location-header items */
+            margin-bottom: 1rem; /* Space below the location-header container */
+            text-align: center; /* Center the text inside the location-header container */
+        }
+            .location-header h3 { /* Styles for h3 elements inside the location-header container */
+                margin: 0 auto; /* Center the h3 element horizontally and remove default margin */
+                font-size: 1.2rem; /* Font size for the location subheading */
+                white-space: nowrap; /* Prevent the text from wrapping to the next line */
+                text-align: center; /* Center the text inside the h3 element */
+                padding-left: 5rem; /* Padding on the left side to create space for the flag image */
+                padding-right: 5rem; /* Padding on the right side to create space for the flag image */
+            }
+        .location-content { /* Styles for the location content div container. This contains a flag image and location description. This class is used by a <div> element which is [BLOCK by default]*/
+            display: flex; /* Use Flexbox for layout inside the location-content container. Also behaves like a block element so it takes the full width of the parent container */
+            flex-direction: column; /* Arrange location-content items in a column */
+            align-items: center; /* Center items horizontally in the container */
+            gap: 0.5rem; /* Space between location-content items */
+            justify-content: center; /* Center items vertically in the container */
+            text-align: center; /* Center the text inside the location-content container */
+        }
+            .flag-box { /* Styles for the flag box div container. This contains a flag image and caption. This class is used by a <div> element which is [BLOCK by default]*/
+                display: flex; /* Use Flexbox for layout inside the flag-box container. Also behaves like a block element so it takes the full width of the parent container */
+                flex-direction: column; /* Arrange flag-box items in a column */
+                align-items: center; /* Center items horizontally in the container */
+                margin-right: 0; /* No margin on the right by default, but will be added in media query for larger screens */
+            }
+                .flag-box img { /* Styles for image elements inside the flag-box container [INLINE by default] */
+                    border: 1px solid var(--card-border); /* Border around the flag image */
+                    border-radius: 4px; /* Slightly rounded corners for the flag image */
+                    max-width: 100px; /* Limit the maximum width of the flag image */
+                    height: auto; /* Maintain aspect ratio of the flag image */
+                    margin-left: auto; /* Center the flag image horizontally */
+                    margin-right: auto; /* Center the flag image horizontally */
+                }
+                .flag-box em { /* Styles for emphasized text (caption) inside the flag-box container [INLINE by default]*/
+                    font-size: 0.95rem; /* Font size for the caption */
+                    color: #555; /* Text color for the caption */
+                    margin-top: 0.3rem; /* Space above the caption */
+                    text-align: center; /* Center the text inside the caption */
+                }
+                .location-text p { /* Styles for paragraph elements inside the location-text container */
+                    margin: 0;  /* Remove default margin */
+                    font-size: 1rem; /* Font size for the paragraph */
+                    line-height: 1.5; /* Line height for the paragraph */
+                    text-align: center; /* Center the text inside the paragraph */
+                }
+        .card ul { /* Styles for unordered list elements inside elements with the class "card". Found in second card */
+            list-style: disc; /* Use disc bullets for the list */
+            padding-left: 1.5rem; /* Padding on the left side to indent the list */
+            margin: 0.5rem 0 0 0; /* Remove default margin and add space above the list. margin: <<top bottom> <right left>>; */
+            display: flex;  /* Use Flexbox for layout inside the list. Also behaves like a block element so it takes the full width of the parent container */
+            flex-direction: column; /* Arrange list items in a column */
+            align-items: center; /* Center items horizontally in the container */
+            justify-content: flex-start; /* Align items to the start of the container vertically */
+        }
+            .card ul li { /* Styles for list item elements inside unordered list elements within elements with the class "card" [BLOCK by default]*/
+                margin-bottom: 0.7rem; /* Space below each list item */
+            }
+                .card ul li a { /* Styles for anchor (link) elements inside list items within unordered list elements in elements with the class "card" [INLINE by default]*/
+                    color: var(--secondary); /* Text color for the links */
+                    text-decoration: underline; /* Underline for the links */
+                    font-size: 1.05rem; /* Font size for the links */
+                    transition: color 0.2s; /* Smooth transition for color changes on hover. Must define what properties you want to transition, can only transition properties defined in hover selector */
+                }
+                    .card ul li a:hover { /* Hover effect for anchor (link) elements inside list items within unordered list elements in elements with the class "card" */
+                        color: var(--accent); /* Change text color on hover */
+                        text-decoration: underline; /* Ensure underline is present on hover */
+                    }
+
+    /* Footer Container Styles */
+/* /////////////////////////////// */
+footer { /* Styles for the footer container [BLOCK by default]*/
+    background: var(--secondary); /* Background color for the footer */
+    color: white; /* Text color for the footer */
+    text-align: center; /* Center the text horizontally in the footer */
+    padding: 1.2rem 0 0.7rem 0; /* Padding above and below the footer text. padding: <<top bottom> <right left>>; */
+    font-size: 1rem; /* Font size for the footer text */
+    margin-top: 2rem; /* Space above the footer */
+    letter-spacing: 0.5px; /* Letter spacing for the footer text */
+}
+    footer p { /* Styles for paragraph elements inside the footer container */
+        margin: 0.2rem 0; /* Space above and below the paragraph. margin: <<top bottom> <right left>>; */
+    }
+    footer .accent { /* Styles for elements with the class "accent" inside the footer container [INLINE by default]*/   
+        color: var(--accent); /* Accent color for highlighted text */
+    }
+    #lastModified { /* (JAVASCRIPT getdates.js) Styles for the element with the ID "lastModified" inside the footer container [INLINE by default]*/
+        color: var(--accent); /* Accent color for the last modified date text */
+        font-size: 0.95rem; /* Slightly smaller font size for the last modified date text */
+        margin-top: 0.3rem; /* Space above the last modified date text */
+    }
+
+
+        /* Media Queries */
+/* /////////////////////////////// */
+@media (max-width: 1200px) {/* Header NavMedia query for screens smaller than 1200px */
+    header nav { /* this helps prevent nav items from being too far apart on smaller screens */
         gap: 4rem;
         flex-wrap: nowrap;
     }
 }
 
-@media (max-width: 900px) {
-    header nav {
+@media (max-width: 900px) {/* Header Nav Media query for screens smaller than 900px */
+    header nav { /* This helps prevent nav items from being too far apart on smaller screens */
         gap: 1.5rem;
         flex-wrap: wrap;
     }
 }
 
-header nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 0.3rem 1rem;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
-}
-
-header nav a:hover,
-header nav a:focus {
-    background: var(--accent);
-    color: var(--secondary);
-    text-decoration: underline;
-}
-
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2.5rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-}
-
-main h1 {
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 2rem;
-    color: var(--secondary);
-    margin-bottom: 0.7rem;
-}
-
-.card {
-    background: white;
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(26, 66, 109, 0.08);
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.card h2 {
-    background: var(--secondary);
-    color: white;
-    font-size: 1.3rem;
-    margin: -1.5rem -1.5rem 1rem -1.5rem;
-    padding: 0.8rem 1.5rem;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-.about-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-}
-
-.about-content p {
-    flex: 2;
-    margin: 0 0 0.5rem 0;
-    font-size: 1.05rem;
-    line-height: 1.6;
-}
-
-.about-content img {
-    flex: 1;
-    align-self: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(26, 66, 109, 0.12);
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-    max-width: 150px;
-    height: auto;
-}
-
-.card hr {
-    margin: 1.2rem 0;
-    border: none;
-    border-top: 1px solid #d1d5db;
-}
-
-.card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.7rem;
-    text-align: center;
-}
-
-.location-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.location-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    white-space: nowrap;
-    text-align: center;
-}
-
-.location-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
-    text-align: center;
-}
-
-.flag-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 0;
-}
-
-.flag-box img {
-    border: 1px solid #d1d5db;
-    border-radius: 4px;
-    max-width: 100px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.flag-box em {
-    font-size: 0.95rem;
-    color: #555;
-    margin-top: 0.3rem;
-    text-align: center;
-}
-
-.location-text p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
-    text-align: center;
-}
-
-.card ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-    margin: 0.5rem 0 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.card ul li {
-    margin-bottom: 0.7rem;
-}
-
-.card ul li a {
-    color: var(--secondary);
-    text-decoration: underline;
-    font-size: 1.05rem;
-    transition: color 0.2s;
-}
-
-.card ul li a:hover,
-.card ul li a:focus {
-    color: var(--accent);
-    text-decoration: underline;
-}
-
-footer {
-    background: var(--secondary);
-    color: white;
-    text-align: center;
-    padding: 1.2rem 0 0.7rem 0;
-    font-size: 1rem;
-    margin-top: 2rem;
-    letter-spacing: 0.5px;
-}
-
-footer p {
-    margin: 0.2rem 0;
-}
-
-footer .accent {
-    color: var(--accent);
-}
-
-#lastModified {
-    color: var(--accent);
-    font-size: 0.95rem;
-    margin-top: 0.3rem;
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
-    main {
+@media (max-width: 900px) { /* Main Media query for screens smaller than 900px */
+    main { /* Change the grid layout to a single column for better readability on smaller screens */
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    .about-content {
+    .about-content { /* Change the about-content layout to a column for better readability on smaller screens */
         flex-direction: column;
         align-items: stretch;
     }
 
-    .about-content img {
+    .about-content img { /* Center the image and add space below it in the about-content container */
         align-self: center;
         margin-bottom: 2rem;
     }
 
-    .location-content {
+    .location-content { /* Change the location-content layout to a column for better readability on smaller screens */
         flex-direction: column;
         align-items: stretch;
     }
 
-    header nav {
+    header nav { /* This helps prevent nav items from being too far apart on smaller screens */
         gap: 1.5rem;
         flex-wrap: wrap;
     }
 
-    .card ul {
+    .card ul { /* Center the list items in the card on smaller screens */
         align-items: center;
         justify-content: center;
     }
 }
 
-@media (min-width: 901px) {
-    .location-header {
+@media (min-width: 901px) { /* Main Media query for screens larger than 900px */
+    .location-header { /* Change the location-header layout to a row for better use of space on larger screens */
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
         text-align: left;
     }
 
-    .location-content {
+    .location-content { /* Change the location-content layout to a row for better use of space on larger screens */
         flex-direction: row;
         align-items: center;
         gap: 1.2rem;
         text-align: left;
     }
 
-    .flag-box {
+    .flag-box { /* Add margin to the right of the flag box for spacing on larger screens */
         margin-right: 1rem;
     }
 
-    .location-text p {
+    .location-text p { /* Align the location text to the left on larger screens */
         text-align: left;
     }
 
-    .card ul {
+    .card ul { /* Align the list items to the start on larger screens */
         align-items: flex-start;
         justify-content: center;
         height: 100%;
