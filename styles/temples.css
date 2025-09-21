@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary: #ffffff;
+    --secondary: #00395f;
+    --accent: #c6c6c6;
+    --background-color: #e4e4e4;
+    --text-color: #000000;
+}
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header, main, footer {
+    margin: 0 auto;
+    min-width: 420px;
+}
+
+header {
+    background: var(--primary);
+    padding: 2rem 2rem 0 2rem;
+    border-bottom: 1px solid var(--accent);
+    box-shadow: 0 2px 4px var(--accent);
+    display: grid;
+    grid-gap: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+    nav {
+        display: none;
+    }
+    .show-nav {
+        display: block;
+    }
+    #menu.show-nav::before {
+        content: "\2715"; /* Unicode for close icon */
+    }
+    #menu {
+        display: inline;
+        width: fit-content;
+        font-size: 2rem;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        color: #000;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;;
+    }
+    #menu::before {
+        content: "\2630"; /* Unicode for hamburger menu icon */
+    }
+    #menu:hover {
+        font-weight: 800;
+    }
+    header h1 {
+        font-size: 2rem;
+        color: var(--secondary);
+    }
+    .nav-bar {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+    }
+        .nav-bar a {
+            display:block;
+            text-align: center;
+            padding: 1rem;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out;
+            color: var(--secondary);
+        }
+        .nav-bar a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+main {
+    margin: 2rem 1rem;
+    padding: 2rem;
+    text-align: center;
+}
+.album {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    place-items: center;
+}
+    figure {
+        background: var(--primary);
+        border: 1px solid var(--accent);
+        box-shadow: 0 2px 4px var(--accent);
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+    }
+        figure img {
+            width: 100%;
+            height: auto;
+        }
+        figure figcaption {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+
+
+
+
+
+
+
+footer {
+    background: var(--secondary);
+    color: white;
+    text-align: center;
+    padding: 1.2rem 0 0.7rem 0;
+    font-size: 1rem;
+    margin-top: 2rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -2px 4px var(--accent);
+}
+    footer p {
+        margin: 0.2rem 0;
+    }
+    footer .accent {
+        color: var(--accent);
+    }
+    #lastModified {
+        color: var(--accent);
+        font-size: 0.95rem;
+        margin-top: 0.3rem;
+    }
