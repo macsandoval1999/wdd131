@@ -1,11 +1,7 @@
-const form = document.querySelector("form");
-const fname = document.getElementById("fname");
-const lname = document.getElementById("lname");
-const para = document.querySelector("p");
+const mainnav = document.querySelector('.navigation')
+const hambutton = document.querySelector('#menu');
 
-form.addEventListener("submit", (e) => {
-    if (fname.value === "" || lname.value === "") {
-        e.preventDefault();
-        para.textContent = "You need to fill in both names!";
-    }
+hambutton.addEventListener('click', () => {
+    mainnav.classList.toggle('show');
+    hambutton.classList.toggle('show');
 });
