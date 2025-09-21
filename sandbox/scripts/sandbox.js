@@ -1,4 +1,11 @@
-let el = document.getElementById("close-button");
-console.log(el.ariaLabel); // "Close"
-el.ariaLabel = "Close dialog";
-console.log(el.ariaLabel); // "Close dialog"
+const form = document.querySelector("form");
+const fname = document.getElementById("fname");
+const lname = document.getElementById("lname");
+const para = document.querySelector("p");
+
+form.addEventListener("submit", (e) => {
+    if (fname.value === "" || lname.value === "") {
+        e.preventDefault();
+        para.textContent = "You need to fill in both names!";
+    }
+});
