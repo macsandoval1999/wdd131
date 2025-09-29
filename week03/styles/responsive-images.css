@@ -1,0 +1,12 @@
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .hero img {
+    width: 100%;
+    height: auto;
+} */
+
+/* both of these give you responsive images that scale as the viewport changes. This one uses the picture element which uses source elements to define different image sources for different screen sizes which gives us faster loading times as opposed to having a one size fits all image. Remember to include the original image sizes to the source elements for better performance. */
