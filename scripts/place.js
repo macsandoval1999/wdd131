@@ -17,8 +17,3 @@ function calculateWindChill(temp, speed) {
 let temp = parseFloat(temperature.textContent);
 let spd = parseFloat(speed.textContent);
 windChill.textContent = Math.round(calculateWindChill(temp, spd));
-
-
-
-// Select DOM elements needed for Weather Icon Large Display
-const weatherIcon = document.getElementById("weather-icon");

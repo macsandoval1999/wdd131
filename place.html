@@ -7,11 +7,12 @@
     <meta name="description" content="WDD 131 - Country Page for Marco Sandoval. This page shows information about about my State which is Arizona.">
     <meta name="author" content="Marco Sandoval">
     <link rel="stylesheet" href="styles/place.css">
+    <link rel="icon" type="image/png" href="images/az-tab.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="scripts/place.js" defer></script>
-    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>      
 </head>
 <body>
     <header>
@@ -26,7 +27,9 @@
         </picture>
 
         <section class="data">
-            <h2>Data</h2>
+            <div class="section-title">
+                <h2>Data</h2>
+            </div>
             <ul class="data-grid">
                 <li><strong>Area:</strong> 113,990 sq mi</li>
                 <li><strong>Population:</strong> 7.3 million (2020)</li>
@@ -40,12 +43,14 @@
         </section>
 
         <section class="weather">
-            <h2>Weather</h2>
+            <div class="section-title weather-large-icon">
+                <h2>Weather</h2>
+            </div>
             <div id="weather-icon">
                 <img src="images/weather-icon.svg" alt="Sunny Icon" width="100" height="100">
             </div>
             <div class="weather-info">
-                <p><strong>Current Temperature:</strong> <span id="temperature">47</span>°F</p>
+                <p><strong>Temperature:</strong> <span id="temperature">47</span>°F</p>
                 <p><strong>Condition:</strong> <span id="condition">Sunny</span></p>
                 <p><strong>Wind:</strong> <span id="speed">5</span> mph</p>
                 <p><strong>Wind Chill:</strong> <span id="wind-chill"></span>°F</p>

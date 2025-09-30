@@ -7,6 +7,7 @@
     --primary-color: #003366;
     --secondary-color: #006699;
     --accent-color: #ff6600;
+    --secondary-color: #ffbc8f;
     --background-color: #f4f4f4;
     --text-color: #000000;
 }
@@ -33,7 +34,7 @@ header {
 header h1 {
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 700;
 }
 header hr {
     position: absolute;
@@ -151,10 +152,10 @@ footer p {
     margin: 0.2rem 0;
 }
 footer .accent {
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 #lastModified {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     font-size: 0.95rem;
     margin-top: 0.3rem;
 }
@@ -172,9 +173,30 @@ footer .accent {
     .hero-image img {
         height: 85vh;
     }
+
     .data, .weather {
         opacity: 0.85;
     }
+
+    .section-title {
+        text-align: left;
+        background-color: var(--secondary-color);
+        position: absolute;
+        color: white;
+        top: 0.5rem;
+        z-index: 3;
+        padding: 5px 1.5rem 0 1.5rem;
+        left: -1.5rem;
+        width: 90%;
+        color: var(--text-color);
+    }
+    .weather-large-icon h2::after {
+        content: "🌤️"; /* Use any weather emoji you like */
+        margin-left: 1em;
+        font-size: 1.2em;
+        vertical-align: middle;
+    }
+
     .data 
     {
         position: absolute;
@@ -183,6 +205,7 @@ footer .accent {
         background-color: white;
         left: 5%;
         min-width: 245px;
+        padding-top: 50px;
     }
 
     .weather {
@@ -192,5 +215,11 @@ footer .accent {
         background-color: white;
         right: 5%;
         min-width: 245px;
+        padding-top: 60px;
     }
+    #weather-icon {
+        display: none;
+    }
+
+
 }
