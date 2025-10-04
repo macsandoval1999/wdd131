@@ -1,0 +1,59 @@
+:root {
+    --header-back: hsl(0, 0%, 61%);
+    --header-fore: hsl(0, 2%, 76%);
+    --header-text: hsl(0, 0%, 0%);
+    --alt-row: hsl(0, 2%, 91%);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "EB Garamond", Arial, serif;
+}
+
+table {/* Table Container */
+    margin: 10px auto;
+    border: thin solid var(--header-back);
+    border-collapse: collapse; /* Collapses borders into a single border instead of separating them */
+    box-shadow: 0 0 10px var(--header-back);
+
+    caption {
+        padding: 10px;
+        caption-side: bottom; /* Positions caption at the bottom of the table */
+        color: var(--header-back);
+        font-size: smaller;
+        }
+
+    th, td { /* Applies to both th and td. td is a cell  so this applies to all cells */
+        padding: 7px 15px;
+        border: 1px solid var(--header-back);
+        white-space: pre;   /* Prevents text from wrapping */
+    }
+
+    thead th, tbody td {
+        text-align: center; /* Centers text in cells */
+    }
+
+    thead {
+        color: var(--header-text);
+        background-color: var(--header-back);
+
+        th {
+            padding: 1rem;
+            font-size: larger;
+        }
+        tr:nth-last-child(1) { /* Styles the last row in thead */
+            background-color: var(--header-fore);
+        }
+    }
+
+    tbody tr:nth-child(even) { /* Styles even rows in tbody. This is what causes the alternating row colors called "zebra striping."*/
+            background-color: var(--alt-row);
+        }
+}
+
+.blank {
+    background-color: var(--header-back);
+}
