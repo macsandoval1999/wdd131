@@ -108,11 +108,17 @@ main {
         text-align: center;
         width: 100%;
         max-width: 500px;
+        transition: transform .25s ease, box-shadow .25s ease;
+        will-change: transform;
     }
-        .temple-card img {
-            width: 100%;
-            height: auto;
-        }
+    .temple-card:hover{
+        transform: translateY(-6px);
+        box-shadow: 0 6px 16px -4px rgb(0, 0, 0);
+    }
+    .temple-card img {
+        width: 100%;
+        height: auto;
+    }
 
 footer {
     background: var(--secondary);

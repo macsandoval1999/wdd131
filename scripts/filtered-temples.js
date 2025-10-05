@@ -14,7 +14,7 @@
     // Temple data
         const temples = [
             {
-                templeName: "Aba Nigeria",
+                templeName: "Aba Nigeria Temple",
                 location: "Aba, Nigeria",
                 dedicated: "2005, August, 7",
                 area: 11500,
@@ -22,7 +22,7 @@
                     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
             },
             {
-                templeName: "Manti Utah",
+                templeName: "Manti Utah Temple",
                 location: "Manti, Utah, United States",
                 dedicated: "1888, May, 21",
                 area: 74792,
@@ -30,7 +30,7 @@
                     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
             },
             {
-                templeName: "Payson Utah",
+                templeName: "Payson Utah Temple",
                 location: "Payson, Utah, United States",
                 dedicated: "2015, June, 7",
                 area: 96630,
@@ -38,7 +38,7 @@
                     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
             },
             {
-                templeName: "Yigo Guam",
+                templeName: "Yigo Guam Temple",
                 location: "Yigo, Guam",
                 dedicated: "2020, May, 2",
                 area: 6861,
@@ -46,7 +46,7 @@
                     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
             },
             {
-                templeName: "Washington D.C.",
+                templeName: "Washington D.C. Temple",
                 location: "Kensington, Maryland, United States",
                 dedicated: "1974, November, 19",
                 area: 156558,
@@ -54,7 +54,7 @@
                     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
             },
             {
-                templeName: "Lima Perú",
+                templeName: "Lima Perú Temple",
                 location: "Lima, Perú",
                 dedicated: "1986, January, 10",
                 area: 9600,
@@ -62,14 +62,35 @@
                     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
             },
             {
-                templeName: "Mexico City Mexico",
+                templeName: "Mexico City Mexico Temple",
                 location: "Mexico City, Mexico",
                 dedicated: "1983, December, 2",
                 area: 116642,
                 imageUrl:
                     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
             },
-            // Add more temple objects here...
+            {
+                templeName: "Cardston Alberta Temple",
+                location: "Cardston, Alberta, Canada",
+                dedicated: "1923, August, 26",
+                area: 88562,
+                imageUrl:
+                    "https://www.churchofjesuschrist.org/imgs/ebdc56cba8bb11eda23ceeeeac1e7e543b91e9b4/full/320%2C/0/default.jpg"
+            }, {
+                templeName: "Sapporo Japan Temple",
+                location: "Sapporo, Japan",
+                dedicated: "2016, August, 21",
+                area: 48480,
+                imageUrl:
+                    "https://www.churchofjesuschrist.org/imgs/c917995588e9c8d3ce881ebd32405150f9109fa7/full/500%2C/0/default.jpg"
+            }, {
+                templeName: "Salt Lake Temple",
+                location: "Salt Lake City, Utah, United States",
+                dedicated: "1893, April, 6",
+                area: 253016,
+                imageUrl:
+                    "https://www.churchofjesuschrist.org/imgs/92c33bcbf9cf85483e008d6871f8ced5f6d7b661/full/500%2C/0/default.jpg"
+            }
         ];
         
     // DOM element for heading
