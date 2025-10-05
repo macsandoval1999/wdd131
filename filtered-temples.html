@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Filtered Temples - Marco Sandoval</title>
+    <meta name="description" content="WDD 131 - Filtered Temples page for Marco Sandoval. This page is a picture album that includes images of temples. This page has been altered to include filters  for different categories of temples.">
+    <meta name="author" content="Marco Sandoval">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="scripts/filtered-temples.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+    <link rel="icon" type="image/png" href="images/temple-icon.png">
+</head>
+<body>
+    <header>
+        <!--(Header Item 1) - Page Title-->
+        <h1>Temples</h1>
+        <!--(Header Item 2) - NavBar Container-->
+        <a id="menu" href="#" aria-label="Menu"></a>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="#" id="home">Home</a></li>
+                <li><a href="#" id="old">Old</a></li>
+                <li><a href="#" id="new">New</a></li>
+                <li><a href="#" id="large">Large</a></li>
+                <li><a href="#" id="small">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Home</h2>
+        <div class="album">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Marco Sandoval | Arizona, USA
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
