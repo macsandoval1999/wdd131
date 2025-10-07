@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -9,6 +8,15 @@
     <script src="sandbox.js" defer></script>
 </head>
 <body>
-    <p id="fullName"></p>
+<li>
+    <label for="favcolor">Favorite Color</label>
+    <input type="color" list="colors" id="favcolor" name="favcolor">
+    <datalist id="colors">
+        <option value="#0000FF" label="blue">
+        <option value="#008000" label="green">
+        <option value="#ff0000" label="red">
+        <option value="#663399" label="RebeccaPurple">
+    </datalist>
+</li>
 </body>
 </html>

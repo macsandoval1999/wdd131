@@ -1,0 +1,120 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0;}
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+
+/*----------- HEADER --------------*/
+header {
+    padding: .5rem 2%;
+    background-color: #ddd;
+}
+header h1 {margin: 0;}
+header h2 {margin: 0; font-weight: normal;}
+
+/*----------- NAVIGATION --------------*/
+nav {
+    background-color: #666;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {border-bottom: solid 1px #333;}
+nav ul li a {
+    display: block;
+    background-color: #444;
+    color: #eee;
+    padding: .5rem 0;
+    text-decoration: none;
+    font-size: .9rem;
+    text-align: center;
+}
+nav ul li.active a {
+    background-color: #000;
+    color: #fff;
+}
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+    min-height: 20rem;
+}
+
+/*wf1 is the class we gave our form to be able to scope our styles to just this form*/
+/* if you had multiple forms on the page, you could give each a different class and style them differently*/
+.wf1 fieldset { /* basically the sections of the form*/
+    margin: 2rem 0; /*margin to space out fieldsets*/
+    border: 1px solid #ddd; /*light border to soften design of fieldsets*/
+    border-radius: 6px; /*rounded corners to soften design of fieldsets*/
+    padding: .5rem 2%; /*padding inside fieldsets so the content is spaced further from the edges*/
+}
+.wf1 legend {
+    color: blue; /*blue color for legend text*/
+    padding: 0 .5rem; /*padding so border doesnt touch text and also to space legend further from content*/
+}
+.wf1 label { /* remember, in our html we made label contain the input elements*/
+    display: block; /*block so labels stack*/
+    padding-top: 1rem; /*padding to space out labels*/
+    font-size: .9rem; /*slightly smaller font size for labels*/
+    color: red; /*red color for labels*/
+}
+.wf1 div { /*the divs used in our html form are being used like mini legends for agroups of inputs*/
+    padding-top: 1rem; /*these mini legends were squished against the top of the fieldset, so padding to space them out and make them look like they belong to the inputs below them*/
+    color: blue; /*blue color since they act as legends for the groups of inputs*/
+    font-size: .9rem; /*slightly smaller font size to match labels*/
+}
+.wf1 input[type="text"], 
+.wf1 input[type="email"],
+.wf1 input[type="tel"],
+.wf1 input[type="url"], 
+.wf1 select,
+.wf1 input[type="date"],
+.wf1 input[type="number"] 
+{ /*styling text, email, tel, url, select, date and number inputs*/
+    background-color: #eee; /*light background color to make them stand out*/
+    display: block; /*block so the inputs seperate from the labels and take their own line*/
+    border: 1px solid #999; /*light border to define the inputs*/
+    border-radius: 6px; /*rounded corners to soften design of inputs*/
+    padding: 0.75rem; /*padding to make inputs larger and easier to use. Remember, min height should be 44px and padding 0.75rem is about that*/
+    color: black; /*darker text color for contrast*/
+    width: 100%; /*full width inputs for less white space*/
+    max-width: 400px; /*max width so they dont get too big on large screens*/
+    appearance: none; /*removes default styling in some browsers*/
+}
+.wf1 input[type="radio"],
+.wf1 input[type="checkbox"] { /*styling radio and checkbox inputs*/
+    margin-right: 6px; /*margin to space inputs from label text so the labels are pushed more to the right*/
+}
+.wf1 input[type="submit"] {
+    border: none; /*no border for submit button*/
+    background-image: linear-gradient(red, darkred); /*red gradient background for submit button*/
+    color: white; /*white text color for contrast*/
+    border-radius: 6px; /*rounded corners to soften design of submit button*/
+    padding: 0.75rem; /*padding to make submit button larger and easier to use*/
+    width: 100%; /*full width submit button for less white space*/
+    max-width: 400px; /*max width so submit button doesnt get too big on large screens*/
+    margin: -1rem 2% 2rem 2%; /*negative margin to pull submit button up into the fieldset, and margin to space it from the bottom of the fieldset. The 2% values space it from the sides so the button is lined up with the other input fields*/
+    box-shadow: 2px 2px 5px black; /*light shadow to give the button some depth*/
+}
+.wf1 input:required:valid {
+    border-right: 5px solid rgb(0, 228, 38); /*green right border for valid required inputs to indicate they are filled out correctly*/
+}
+.wf1 input:required:invalid {
+    border-right: 5px solid rgb(229, 0, 0); /*red right border for invalid required inputs to indicate they must be filled out*/
+}
+
+/*----------- FOOTER --------------*/
+footer {
+    background-color: #ddd;
+    padding: .5rem 2%;
+    text-align: center;
+}
