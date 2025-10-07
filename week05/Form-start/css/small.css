@@ -100,7 +100,7 @@ main {
     color: white; /*white text color for contrast*/
     border-radius: 6px; /*rounded corners to soften design of submit button*/
     padding: 0.75rem; /*padding to make submit button larger and easier to use*/
-    width: 100%; /*full width submit button for less white space*/
+    width: 96%; /*full width submit button for less white space*/
     max-width: 400px; /*max width so submit button doesnt get too big on large screens*/
     margin: -1rem 2% 2rem 2%; /*negative margin to pull submit button up into the fieldset, and margin to space it from the bottom of the fieldset. The 2% values space it from the sides so the button is lined up with the other input fields*/
     box-shadow: 2px 2px 5px black; /*light shadow to give the button some depth*/
