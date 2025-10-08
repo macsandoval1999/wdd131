@@ -106,6 +106,10 @@ main {
     margin: -1rem 2% 2rem 2%; /*negative margin to pull submit button up into the fieldset, and margin to space it from the bottom of the fieldset. The 2% values space it from the sides so the button is lined up with the other input fields*/
     box-shadow: 2px 2px 5px black; /*light shadow to give the button some depth*/
 }
+.wf1 input[type="submit"]:hover, .wf1 input[type="radio"]:hover, .wf1 input[type="checkbox"]:hover {
+    background-image: linear-gradient(darkred, red); /*reverse gradient on hover for submit button*/
+    cursor: pointer; /*pointer cursor on hover for submit button to indicate its clickable*/
+}
 .wf1 input:required:valid {
     border-right: 5px solid rgb(0, 228, 38); /*green right border for valid required inputs to indicate they are filled out correctly*/
 }
