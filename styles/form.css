@@ -5,10 +5,11 @@
 }
 
 :root {
-    --primary-color: lightgray;
+    --primary-color: #900101;
     --secondary-color: black;
     --accent: rgb(255, 54, 54);
     --footer-clrs: rgba(255, 161, 161, 0.8);
+    --glow: red;
 }
 body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -119,7 +120,7 @@ input[type="radio"] {
     justify-content: left;
 }
 .stars label {
-    color: red;
+    color: var(--primary-color);
     width: 30px;
     height: 10px;
     font-size: 2rem;
@@ -127,15 +128,20 @@ input[type="radio"] {
     align-items: center;
     padding-right: 3rem;
     padding: 1rem 0;
+    transition: 0.3s ease;
 }
 .stars label:hover {
     color: rgb(255, 54, 54, 0.4);
 }
 .stars label::before {
     content: "\2606";
+    transition: 0.3s ease;
 }
 .stars input:checked~label::before {
     content: "\2605";
+    color: var(--glow);
+    transition: 1s ease;
+    text-shadow: 0 0 8px var(--glow), 0 0 12px var(--glow), 0 0 16px var(--glow);
 }
 
 textarea {
@@ -154,7 +160,7 @@ textarea {
 
 input[type="submit"] {
     border: none;
-    background: linear-gradient(red, darkred);
+    background-color: var(--primary-color);
     color: white;
     border-radius: 6px;
     padding: 0.75rem;
@@ -172,7 +178,7 @@ input[type="radio"]:hover,
 input[type="checkbox"]:hover, .submitAnotherReview:hover {
     cursor: pointer;
     transform: scale(1.05);
-    background-color: red;
+    background-color: var(--glow);
     box-shadow: 1px 4px 12px rgba(255, 0, 0, 0.773);
     font-weight: 600;
 }
@@ -188,7 +194,7 @@ input[type="checkbox"]:hover, .submitAnotherReview:hover {
 
 .submitAnotherReview {
     display: inline-block;
-    background-color: red;
+    background-color: var(--primary-color);
     color: white;
     text-decoration: none;
     padding: 0.5rem 0.75rem;
@@ -202,10 +208,6 @@ input[type="checkbox"]:hover, .submitAnotherReview:hover {
 .submitAnotherReview a {
     color: white;
     text-decoration: none;
-}
-.submitAnotherReview:hover {
-    background-color: red;
-    box-shadow: 1px 4px 12px rgba(255, 0, 0, 0.773);
 }
 
 .highlight {
