@@ -8,10 +8,11 @@
     --primary-color: lightgray;
     --secondary-color: black;
     --accent: rgb(255, 54, 54);
+    --footer-clrs: rgba(255, 161, 161, 0.8);
 }
 body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    color: black;
+    color: var(--secondary-color);
     line-height: 1.6;
     min-width: 330px;
     background: linear-gradient(to right, #000000, #000000c8);
@@ -24,7 +25,7 @@ h1 {
     text-align: center;
     color: white;
     padding: 2rem 0;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .required {
@@ -229,12 +230,8 @@ footer p {
     margin: 0.2rem 0;
 }
 
-footer .accent {
-    color:  var(--accent);
-}
-
 #lastModified, #currentyear {
-    color: var(--accent);
+    color: var(--footer-clrs);
     font-size: 0.95rem;
     margin-top: 0.3rem;
 }
