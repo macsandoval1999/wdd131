@@ -28,6 +28,11 @@ const products = [
     }
 ];
 
+ // Function to capitalize the first letter of each word in a string
+function capitalizeWords(str) {
+    return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
 // Link Product Element from HTML
 const productSelect = document.getElementById("products");
 
@@ -40,6 +45,6 @@ while (productSelect.options.length > 1) {
 products.forEach(product => {
     const option = document.createElement("option");
     option.value = product.id;
-    option.textContent = `${product.name} (Avg. Rating: ${product.averagerating})`;
+    option.textContent = `${capitalizeWords(product.name)} (Avg. Rating: ${product.averagerating})`;
     productSelect.appendChild(option);
 });
