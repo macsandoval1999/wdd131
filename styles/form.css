@@ -207,6 +207,14 @@ input[type="checkbox"]:hover, .submitAnotherReview:hover {
     box-shadow: 1px 4px 12px rgba(255, 0, 0, 0.773);
 }
 
+.highlight {
+    color: white;
+    padding: 0 0.3rem;
+    font-size: 2rem;
+    border-radius: 4px;
+    color: var(--accent);
+}
+
 /* FOOTER */
 footer {
     color: white;
