@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: lightgray;
+    --secondary-color: black;
+    --accent: rgb(255, 54, 54);
+}
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: black;
+    line-height: 1.6;
+    min-width: 330px;
+    background: linear-gradient(to right, #000000, #000000c8);
+    margin: 0 auto;
+    min-height: 100vh;
+    min-width: 620px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    padding: 2rem 0;
+    font-weight: 200;
+}
+
+.required {
+    color: var(--accent);
+    padding-left: 0.3rem;
+    font-weight: 900;
+}
+
+.miniInstructions {
+    font-style: italic;
+    font-size: 1rem;
+    color: rgb(192, 189, 255);
+}
+
+form {
+    padding: 0 2rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(125, 125, 125, 0.504);
+    max-width: 75%;
+    margin: 0 auto;
+    color: white;
+    border: 1px solid rgb(0, 0, 0);
+    background: rgba(255, 255, 255, 0.1);
+    min-height: 80vh;
+}
+fieldset {
+    margin: 2rem 0;
+    padding: 1rem 1rem 2rem 1rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+legend {
+    font-weight: 400;
+    color: var(--accent);
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    display: block;
+}
+
+label, .featuresHeader {
+    display: block;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: white;
+    padding-top: 1rem;
+}
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.4);
+    accent-color: var(--accent);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+select,
+input[type="date"],
+input[type="number"] {
+    background-color: #eee;
+    display: block;
+    border: 1px solid #999;
+    border-radius: 6px;
+    padding: 0.75rem;
+    color: black;
+    width: 100%;
+    max-width: 400px;
+    appearance: none;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+#rateHead {
+    display: block;
+    padding-top: 2rem;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 400;
+}
+input[type="radio"] {
+    display: none;
+}
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+.stars label {
+    color: red;
+    width: 30px;
+    height: 10px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    padding-right: 3rem;
+    padding: 1rem 0;
+}
+.stars label:hover {
+    color: rgb(255, 54, 54, 0.4);
+}
+.stars label::before {
+    content: "\2606";
+}
+.stars input:checked~label::before {
+    content: "\2605";
+}
+
+textarea {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.05);
+    display: block;
+    border-radius: 6px;
+    padding: 0.75rem;
+    width: 100%;
+    min-height: 10rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+input[type="submit"] {
+    border: none;
+    background: linear-gradient(red, darkred);
+    color: white;
+    border-radius: 6px;
+    padding: 0.75rem;
+    width: 363px;
+    margin: 0 1rem 2rem 1rem;;
+    max-width: 400px;
+    
+    box-shadow: 2px 2px 5px black;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+input[type="submit"]:hover,
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+
+/* FOOTER */
+footer {
+    color: white;
+    text-align: center;
+    padding: 1.2rem 1.5rem 0.7rem 1.5rem;
+    font-size: 1rem;
+    margin-top: 2rem;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin: 0.2rem 0;
+}
+
+footer .accent {
+    color:  var(--accent);
+}
+
+#lastModified, #currentyear {
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+}
+
+@media (min-width: 620px) {
+    form {
+        max-width: 50%;
+        min-width: 620px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        margin: 0 1rem 2rem 1rem;
+    }
+}

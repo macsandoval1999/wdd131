@@ -89,7 +89,6 @@ main {
     width: 100%; /*full width inputs for less white space*/
     max-width: 400px; /*max width so they dont get too big on large screens*/
     appearance: none; /*removes default styling in some browsers*/
-
 }
 .wf1 input[type="radio"],
 .wf1 input[type="checkbox"] { /*styling radio and checkbox inputs*/

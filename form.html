@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Product Review Form - Marco Sandoval</title>
+    <meta name="description"
+        content="WDD 131 - Product Review Form page for Marco Sandoval. This page has a form that allows users to submit reviews for products.">
+    <meta name="author" content="Marco Sandoval">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="scripts/form.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+    <div><h1>Product Review</h1></div>
+    <form method="get" action="review.html">
+        <fieldset>
+            <legend>Product Information</legend>
+
+            <!--PRODUCT NAME-->
+            <label>Product Name<span class="required">*</span>
+                <select name="product" id="products" required>
+                    <option value="" disabled selected>Select a product &#9207;</option>
+                    <option value="Cooker Baker 3000">Cooker Baker 3000</option>
+                    <option value="Greesy Greese 4.5">Greesy Greese 4.5</option>
+                    <option value="Fender Blender 2">Fender Blender 2</option>
+                    <option value="Sandwhich Maker V2.1">Sandwhich Maker V2.1</option>
+                    <option value="Noob Toaster">Noob Toaster</option>
+                    <option value="Professional Toaster">Professional Toaster</option>
+                </select>
+            </label>
+
+            <!--INSTALLATION DATE-->
+            <label>Date of Installation<span class="required">*</span><input type="date" id="installDate" name="completeDate" required></label>
+        </fieldset>
+
+
+
+        <fieldset>
+            <legend>Rate This Product</legend>
+
+            <!--FEATURES CHECKBOX-->
+            <div class="featuresHeader">Which features did you find useful in the product?<br><span class="miniInstructions">(Check all that apply)</span></div>
+            <label><input type="checkbox" name="durable" value="yes"> Durability</label>
+            <label><input type="checkbox" name="easy" value="yes"> Ease of Use</label>
+            <label><input type="checkbox" name="performance" value="yes"> Performance</label>
+            <label><input type="checkbox" name="design" value="yes"> Design</label>
+
+            <!--STAR RATING-->
+            <label id="rateHead">Overall Rating<span class="required">*</span></label>
+            <div class="stars">
+                <input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar"></label>
+                <input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar"></label>
+                <input type="radio" id="threestar" name="stars" value="3" required><label for="threestar"></label>
+                <input type="radio" id="twostar" name="stars" value="2" required><label for="twostar"></label>
+                <input type="radio" id="onestar" name="stars" value="1" required><label for="onestar"></label>
+            </div>
+        </fieldset>
+
+
+
+        <fieldset>
+            <legend>Optional</legend>
+
+            <!--REVIEW TEXTAREA-->
+            <label>Written Review <span class="miniInstructions">(optional)</span><textarea name="writReview" id="writReview" maxLength="500" placeholder="Write your review here..."></textarea></label>
+
+            <!--USER NAME-->
+            <label>Your Name <span class="miniInstructions">(optional)</span><input type="text" name="userName" id="userName"></label>
+        </fieldset>
+
+        <!--SUBMIT BUTTON-->
+        <input type="submit" value="Submit Review">
+
+    </form>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Marco Sandoval | Arizona, USA
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
